@@ -7,6 +7,11 @@ const generateMarkdown = require('./utils/generateMarkdown');
 // no inquirer.prompt?
 const questions = [{
     type: 'input',
+    name: 'Name',
+    message: 'What is your full name on your birth certificate?'
+},
+{
+    type: 'input',
     name: 'Title',
     message: 'What do you call your project?'
 },

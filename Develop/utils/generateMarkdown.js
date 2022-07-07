@@ -59,7 +59,7 @@ const renderLicenseSection = (data) => {
 const generateMarkdown = (data) => {
   return `# ${data.Title}
   ## https://github.com/${data.Github}/${data.Title}
-  ## https://drive.google.com/file/d/1qt2ULNec1a1l2RcOAIrPv-ZjNTe5ZpYt/view?usp=sharing
+  ## This is where my Screencastify will go
   # Description
   ${data.Description}
   # Table of Contents
@@ -75,16 +75,14 @@ const generateMarkdown = (data) => {
   }
   # Usage
   In order to use this app, ${data.Usage}
-  ${renderLicenseSection(data)}
+  ${renderLicenseBadge(data)}
   # Contributions
   Contributors: ${data.Contributions}
   # Tests
   The following is needed to run tests: ${data.Tests}
   # Questions
-  If you have any questions about the repository contact ${
-    data.Contributions
-  } directly at : ${data.Email}.
-  `;
+  If you have any questions about this repository contact ${data.Name} 
+  directly at : ${data.Email}.`;
 }
 
 module.exports = generateMarkdown;
