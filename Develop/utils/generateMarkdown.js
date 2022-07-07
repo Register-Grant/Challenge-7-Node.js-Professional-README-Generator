@@ -28,22 +28,21 @@ function renderLicenseBadge(data) {
   }
 };
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-// function renderLicenseLink(license) {}
-
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(data) {
   const licensePicked = data.License;
   
+  //I just can't get this to render the license badge
+  //So I'm leaving this here so the navigatin works
+  //And adding a template literal to display the badge below
   if(licensePicked === 'None') {
     return "";
   } else {
     return `# License
     ${renderLicenseBadge(data)}`;
   }
- };
+ }
 
  const renderLicenseTOC = (data) => {
   const licensePicked = data.License;
