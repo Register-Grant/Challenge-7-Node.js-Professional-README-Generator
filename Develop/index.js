@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application: DONE
 const inquirer = require('inquirer');
 const fs = require('fs');
-const {generateMarkdown} = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input: DONE
 // no inquirer.prompt?
@@ -15,11 +15,11 @@ const questions = [{
     name: 'Description',
     message: 'Give a detailed, but still pretty short, description of your project'
 },
-{
-    type: 'input',
-    name: 'TableOfContents',
-    message: 'Table of Contents - (Press Enter)'
-},
+// {
+//     type: 'input',
+//     name: 'TableOfContents',
+//     message: 'Table of Contents - (Press Enter)'
+// },
 {
     type: 'input',
     name: 'Installation',
@@ -36,9 +36,10 @@ const questions = [{
     message: 'Does your project need a license?'
 },
 {
-    type: 'input',
+    type: 'list',
     name: 'LicenseType',
-    message: 'Which license, or licenses, are needed for this project?'
+    message: 'Which license, or licenses, are needed for this project?',
+    choices: ['MIT', 'Apache', 'Boost', 'BDS 3-Clause', 'None']
 },
 {
     type: 'input',
@@ -67,7 +68,7 @@ const questions = [{
 //and what do the two arguments represent here?
 const writeToFile = (fileName, data) => {
     // what do fileName, data, and function(err) represent? Like what to create, what to load in there, and what to do if an error is thrown?
-    fs.writeToFile(fileName, data, function(err) {
+    fs.writeFile(fileName, data, function(err) {
         // do we even need this console log? 
         //console.log(data),
         err ? console.log(err) : console.log("You did it this a README.md file!")
@@ -79,7 +80,7 @@ const writeToFile = (fileName, data) => {
 const init = () => {
     inquirer.prompt(questions)
     .then(function(data) {
-        fs.writeFile("README.md", generateMarkdown(data));
+        writeToFile("README.md", generateMarkdown(data));
         // do we need this console log either? 
         //console.log(data)
     })
