@@ -58,34 +58,35 @@ const renderLicenseSection = (data) => {
 // TODO: Create a function to generate markdown for README
 const generateMarkdown = (data) => {
   return `# ${data.Title}
-  ## https://github.com/${data.github}/${data.title}
+  ## https://github.com/${data.Github}/${data.Title}
   ## https://drive.google.com/file/d/1qt2ULNec1a1l2RcOAIrPv-ZjNTe5ZpYt/view?usp=sharing
   # Description
-  ${data.description}
+  ${data.Description}
   # Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
-  ${renderLicenseTableOfContents(data)}
-  # ${renderLicenseBadge(data)}
+  ${renderLicenseTOC(data)}
   * [Contributing](#contributions)
-  * [Tests](#test)
+  * [Tests](#tests)
   * [Questions](#questions)
   # Installation
   The following necessary dependencies must be installed to run the application: ${
-    data.installation
+    data.Installation
   }
   # Usage
-  In order to use this app, ${data.usage}
-  ${ renderLicenseSection(data)}
+  In order to use this app, ${data.Usage}
+  ${renderLicenseSection(data)}
   # Contributions
-  Contributors: ${data.contributions}
+  Contributors: ${data.Contributions}
   # Tests
-  The following is needed to run tests: ${data.test}
+  The following is needed to run tests: ${data.Tests}
   # Questions
   If you have any questions about the repository contact ${
-    data.contributions
-  } directly at : ${data.email}.
+    data.Contributions
+  } directly at : ${data.Email}.
   `;
 }
 
 module.exports = generateMarkdown;
+
+// # ${renderLicenseBadge(data)}
