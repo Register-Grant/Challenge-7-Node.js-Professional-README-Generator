@@ -34,34 +34,58 @@ function renderLicenseBadge(data) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseTOC(data) {
+const renderLicenseSection = (data) => {
+  const licensePicked = data.License;
+  
+  if(licensePicked === 'None') {
+    return "";
+  } else {
+    return `# License
+    ${renderLicenseBadge(data)}`;
+  }
+ };
+
+ const renderLicenseTOC = (data) => {
   const licensePicked = data.License;
  
   if(licensePicked === 'None') {
     return "";
- 
   } else {
     return "* [License](#license)";
   }
 };
 
-function renderLicenseSection(data) {
-  const licensePicked = data.license;
-  
-  if(licensePicked === 'None') {
-    return "";
- 
-  } else {
-    return `# License
-    ${renderLicenseBadge(data)}`;
-  }
- }
-
 // TODO: Create a function to generate markdown for README
 const generateMarkdown = (data) => {
   return `# ${data.Title}
-# ${renderLicenseBadge(data)}
-`;
+  ## https://github.com/${data.github}/${data.title}
+  ## https://drive.google.com/file/d/1qt2ULNec1a1l2RcOAIrPv-ZjNTe5ZpYt/view?usp=sharing
+  # Description
+  ${data.description}
+  # Table of Contents
+  * [Installation](#installation)
+  * [Usage](#usage)
+  ${renderLicenseTableOfContents(data)}
+  # ${renderLicenseBadge(data)}
+  * [Contributing](#contributions)
+  * [Tests](#test)
+  * [Questions](#questions)
+  # Installation
+  The following necessary dependencies must be installed to run the application: ${
+    data.installation
+  }
+  # Usage
+  In order to use this app, ${data.usage}
+  ${ renderLicenseSection(data)}
+  # Contributions
+  Contributors: ${data.contributions}
+  # Tests
+  The following is needed to run tests: ${data.test}
+  # Questions
+  If you have any questions about the repository contact ${
+    data.contributions
+  } directly at : ${data.email}.
+  `;
 }
 
 module.exports = generateMarkdown;
