@@ -34,7 +34,7 @@ function renderLicenseBadge(data) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-const renderLicenseSection = (data) => {
+function renderLicenseSection(data) {
   const licensePicked = data.License;
   
   if(licensePicked === 'None') {
@@ -75,7 +75,8 @@ const generateMarkdown = (data) => {
   }
   # Usage
   In order to use this app, ${data.Usage}
-  ${renderLicenseBadge(data)}
+  ${renderLicenseSection(data)}
+  # ${renderLicenseBadge(data)}
   # Contributions
   Contributors: ${data.Contributions}
   # Tests
@@ -86,5 +87,3 @@ const generateMarkdown = (data) => {
 }
 
 module.exports = generateMarkdown;
-
-// # ${renderLicenseBadge(data)}

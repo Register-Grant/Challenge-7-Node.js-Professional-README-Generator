@@ -1,8 +1,8 @@
-# Challenge-7-Node.js-Professional-README-Generator
-  ## https://github.com/Register-Grant/Challenge-7-Node.js-Professional-README-Generator
-  ## https://drive.google.com/file/d/1qt2ULNec1a1l2RcOAIrPv-ZjNTe5ZpYt/view?usp=sharing
+# something
+  ## https://github.com/Register-Grant/something
+  ## This is where my Screencastify will go
   # Description
-  using node.js and question prompts to create a readme
+  something more
   # Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
@@ -11,15 +11,14 @@
   * [Tests](#tests)
   * [Questions](#questions)
   # Installation
-  The following necessary dependencies must be installed to run the application: Inquirer
+  The following necessary dependencies must be installed to run the application: inquirer
   # Usage
-  In order to use this app, Run npm init -y and npm install inquirer or something of that nature
-  # License
-    [![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
+  In order to use this app, run npm init and inquirer and such
+  [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
   # Contributions
-  Contributors: It takes a village
+  Contributors: village
   # Tests
-  The following is needed to run tests: Running node index.js approximately 3,000 times
+  The following is needed to run tests: run node.js
   # Questions
-  If you have any questions about the repository contact It takes a village directly at : register.grant@gmail.com.
-  
+  If you have any questions about this repository contact Grant Paul Register, Esquire 
+  directly at : register.grant@gmail.com.
